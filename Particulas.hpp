@@ -3,8 +3,9 @@
 
 #include "Vetor_2D.hpp"
 
-class Particula{
-    
+class Particula
+{
+
 private:
     Vetor2D posicao;
     Vetor2D velocidade;
@@ -12,8 +13,15 @@ private:
     float massa;
 
 public:
+    Particula(float x, float y, float massa);
 
+    void movimentar();
+    void aplicarForca(const Vetor2D &forca);
 
+    Vetor2D get_posicao() const;
+    float get_massa() const;
+
+    void zerarAceleracao();
 };
 
 #endif

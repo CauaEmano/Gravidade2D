@@ -1,30 +1,33 @@
-#include <vector>
 #include "Vetor_2D.hpp"
+#include "Particulas.hpp"
 
 using namespace std;
 
-class Particula{
-private:
-    Vetor2D posicao;
-    Vetor2D velocidade;
-    Vetor2D aceleracao;
-    float massa;
-};
+Particula::Particula(float x, float y, float massa_inicial) : posicao(x, y), massa(massa_inicial), velocidade(0, 0), aceleracao(0, 0) {}
 
-int main(){
+void Particula::movimentar()
+{
+    velocidade = velocidade + aceleracao;
+    posicao = velocidade + posicao;
+}
 
-    vector<Particula> particulas;
+void Particula::aplicarForca(const Vetor2D &forca)
+{
+    aceleracao = aceleracao + forca * (1 / massa);
+}
 
-    int tamanho = particulas.size();
-    for (int i = 0; i < tamanho; i++){
-        for (int j = 0; j < tamanho; j++){
-            if (i == j){
-                continue;
-            }
-            //Vetor2D vetor_distancia = particulas[j].posicao - particulas[i].posicao;
-            //Resto do código
-        }
-    }
+Vetor2D Particula::get_posicao() const
+{
+    return posicao;
+}
 
-    return 0;
+float Particula::get_massa() const
+{
+    return massa;
+}
+
+void Particula::zerarAceleracao()
+{
+    Vetor2D ace_zero(0, 0);
+    aceleracao = ace_zero;
 }
