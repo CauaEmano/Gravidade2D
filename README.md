@@ -71,5 +71,4 @@ A cada quadro (frame), o simulador realiza os seguintes passos:
 
 -----
 
-**Autor:** [Seu Nome Aqui]
-*Desenvolvido como estudo de Física Computacional e C++.*
+**Autor:** Cauã Emanuel
