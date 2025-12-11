@@ -31,3 +31,8 @@ void Particula::zerarAceleracao()
     Vetor2D ace_zero(0, 0);
     aceleracao = ace_zero;
 }
+
+void Particula::setVelocidade(float vx, float vy)
+{
+    velocidade = Vetor2D(vx, vy);
+}

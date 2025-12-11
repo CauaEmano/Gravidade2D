@@ -22,6 +22,7 @@ public:
     float get_massa() const;
 
     void zerarAceleracao();
+    void setVelocidade(float vx, float vy);
 };
 
 #endif
